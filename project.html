@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel Universe Movie Database</title>
+    <link rel="stylesheet" href="model.css">
+    <script src="document.js"></script>
+    <script src="search.js"></script>
+</head>
+<body>
+
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="video.1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+<!-- Header with Login Button -->
+<header>
+    <div class="contact-info">
+        <h1>Marvel Universe Movie Database</h1>
+        <p>Email: support@marvelmoviedatabase.com | Phone: (+91)7598985142</p>
+    </div>
+    <div class="auth-buttons">
+        <button id="loginBtn" class="login-btn">Login</button>
+    </div>
+
+
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#movies">Movies</a></li>
+        <li><a href="#series">Series</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+</header>
+
+<section class="search-section">
+<h2>Search Movies and Series</h2>
+<input type="text" id="searchInput" placeholder="Search for movies or series...">
+<select id="genreFilter">
+    <option value="">All Genres</option>
+    <option value="Action">Action</option>
+    <option value="Adventure">Adventure</option>
+    <option value="Sci-Fi">Sci-Fi</option>
+    <option value="Fantasy">Fantasy</option>
+    <option value="Comedy">Comedy</option>
+    <option value="Drama">Drama</option>
+    <option value="Thriller">Thriller</option>
+    <option value="Crime">Crime</option>
+    <option value="Animation">Animation</option>
+</select>
+<select id="yearFilter">
+    <option value="">All Years</option>
+    <!-- Options will be added dynamically -->
+</select>
+<button onclick="searchContent()">Search</button>
+</section>
+
+<!-- Movie Container for Search Results -->
+<div class="movie-container" id="movieContainer">
+    <!-- Search results will be displayed here -->
+</div>
+
+<div id="main-content">
+    <!-- Main Content of your site here -->
+    <section id="movies">
+        <h2>Marvel Movies</h2>
+        <div class="movie-container" id="movieList">
+            <!-- Movie Cards Here -->
+            <!-- Iron Man -->
+            <div class="movie-card" data-genre="Action" data-year="2008">
+                <img src="./ironman2008.jpeg" alt="Iron Man">
+                <h3>Iron Man</h3>
+                <p>Release Year: 2008</p>
+                <p>Genre: Action, Adventure, Sci-Fi</p>
+                <p>Rating: 7.9/10</p>
+                <p>Plot: Tony Stark, a wealthy industrialist, is captured and forced to build a weapon of mass destruction. Instead, he builds a powerful suit of armor to escape and uses it to fight against evil.</p>
+                <a href="https://www.youtube.com/watch?v=8hYlB38asDY" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- The Incredible Hulk -->
+            <div class="movie-card" data-genre="Action" data-year="2008">
+                <img src="./hulk2008.jpeg" alt="The Incredible Hulk">
+                <h3>The Incredible Hulk</h3>
+                <p>Release Year: 2008</p>
+                <p>Genre: Action, Adventure, Sci-Fi</p>
+                <p>Rating: 6.7/10</p>
+                <p>Plot: Dr. Bruce Banner, a scientist on the run from the US government, must find a cure for the monster he turns into whenever he loses his temper.</p>
+                <a href="https://www.youtube.com/watch?v=xbqNb2PFKKA" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Iron Man 2 -->
+            <div class="movie-card" data-genre="Action" data-year="2010">
+                <img src="./ironman2010.jpg" alt="Iron Man 2">
+                <h3>Iron Man 2</h3>
+                <p>Release Year: 2010</p>
+                <p>Genre: Action, Adventure, Sci-Fi</p>
+                <p>Rating: 7.0/10</p>
+                <p>Plot: With the world now aware of his dual life as Iron Man, Tony Stark must contend with both his declining health and the arrival of a new enemy.</p>
+                <a href="https://www.youtube.com/watch?v=BoohRoVA9WQ" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Thor -->
+            <div class="movie-card" data-genre="Action" data-year="2011">
+                <img src="./thor.jpeg" alt="Thor">
+                <h3>Thor</h3>
+                <p>Release Year: 2011</p>
+                <p>Genre: Action, Adventure, Fantasy</p>
+                <p>Rating: 7.0/10</p>
+                <p>Plot: Thor, the Norse god of thunder, is banished to Earth as punishment for his arrogance and must prove himself worthy of his powers to return to Asgard.</p>
+                <a href="https://www.youtube.com/watch?v=JOddp-nlNvQ" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Captain America: The First Avenger -->
+            <div class="movie-card" data-genre="Action" data-year="2011">
+                <img src="./captainamericafirst (2).jpeg" alt="Captain America: The First Avenger">
+                <h3>Captain America: The First Avenger</h3>
+                <p>Release Year: 2011</p>
+                <p>Genre: Action, Adventure, Sci-Fi</p>
+                <p>Rating: 6.9/10</p>
+                <p>Plot: Steve Rogers, a frail young man, is enhanced to the peak of human physicality by an experimental serum in order to fight the evil Red Skull.</p>
+                <a href="https://www.youtube.com/watch?v=JerVrbLldXw" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- The Avengers -->
+            <div class="movie-card" data-genre="Action" data-year="2012">
+                <img src="./avengers.jpeg" alt="The Avengers">
+                <h3>The Avengers</h3>
+                <p>Release Year: 2012</p>
+                <p>Genre: Action, Adventure, Sci-Fi</p>
+                <p>Rating: 8.0/10</p>
+                <p>Plot: Earth's mightiest heroes must come together and assemble to stop Loki and his alien army from subjugating the Earth.</p>
+                <a href="https://www.youtube.com/watch?v=eOrNdBpGMv8" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Iron Man 3 -->
+            <div class="movie-card" data-genre="Action" data-year="2013">
+                <img src="./ironman3.jpeg" alt="Iron Man 3">
+                <h3>Iron Man 3</h3>
+                <p>Release Year: 2013</p>
+                <p>Genre: Action, Adventure, Sci-Fi</p>
+                <p>Rating: 7.2/10</p>
+                <p>Plot: Tony Stark faces a new enemy in the form of the Mandarin while dealing with his own personal issues and his suit’s stability.</p>
+                <a href="https://www.youtube.com/watch?v=YLorLVa95Xo" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Thor: The Dark World -->
+            <div class="movie-card" data-genre="Action" data-year="2013">
+                <img src="./darkworldthor.jpeg" alt="Thor: The Dark World">
+                <h3>Thor: The Dark World</h3>
+                <p>Release Year: 2013</p>
+                <p>Genre: Action, Adventure, Fantasy</p>
+                <p>Rating: 6.9/10</p>
+                <p>Plot: Thor must team up with his estranged brother Loki to save the universe from the Dark Elves, who seek to plunge it into eternal darkness.</p>
+                <a href="https://www.youtube.com/watch?v=npvJ9FTgZbM" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+
+            <!-- Captain America: The Winter Soldier -->
+            <div class="movie-card" data-genre="Action" data-year="2014">
+                <img src="./captainwinter.jpeg" alt="Captain America: The Winter Soldier">
+                <h3>Captain America: The Winter Soldier</h3>
+                <p>Release Year: 2014</p>
+                <p>Genre: Action, Adventure, Sci-Fi</p>
+                <p>Rating: 7.8/10</p>
+                <p>Plot: Steve Rogers teams up with Black Widow to fight a powerful enemy, the Winter Soldier, while uncovering a conspiracy within S.H.I.E.L.D.</p>
+                <a href="https://www.youtube.com/watch?v=7SlILk2WMTI" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Guardians of the Galaxy -->
+            <div class="movie-card" data-genre="Action" data-year="2014">
+                <img src="./guardiandsofthegalaxy2014.jpeg" alt="Guardians of the Galaxy">
+                <h3>Guardians of the Galaxy</h3>
+                <p>Release Year: 2014</p>
+                <p>Genre: Action, Adventure, Comedy</p>
+                <p>Rating: 8.0/10</p>
+                <p>Plot: A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.</p>
+                <a href="https://www.youtube.com/watch?v=d96cjJhvlMA" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Avengers: Age of Ultron -->
+            <div class="movie-card" data-genre="Action" data-year="2015">
+                <img src="./ageofultron2015.jpeg" alt="Avengers: Age of Ultron">
+                <h3>Avengers: Age of Ultron</h3>
+                <p>Release Year: 2015</p>
+                <p>Genre: Action, Adventure, Sci-Fi</p>
+                <p>Rating: 7.3/10</p>
+                <p>Plot: The Avengers must work together to defeat Ultron, a rogue artificial intelligence bent on human extinction.</p>
+                <a href="https://www.youtube.com/watch?v=tmeOjFno6Do" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Ant-Man -->
+            <div class="movie-card" data-genre="Action" data-year="2015">
+                <img src="./antman.jpeg" alt="Ant-Man">
+                <h3>Ant-Man</h3>
+                <p>Release Year: 2015</p>
+                <p>Genre: Action, Adventure, Comedy</p>
+                <p>Rating: 7.3/10</p>
+                <p>Plot: Scott Lang, a thief, must use his new ability to shrink in size but increase in strength to help his mentor, Dr. Hank Pym, protect his shrinking technology.</p>
+                <a href="https://www.youtube.com/watch?v=pWdKf3MneyI" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Captain America: Civil War -->
+            <div class="movie-card" data-genre="Action" data-year="2016">
+                <img src="./civilwar2016.jpg" alt="Captain America: Civil War">
+                <h3>Captain America: Civil War</h3>
+                <p>Release Year: 2016</p>
+                <p>Genre: Action, Adventure, Sci-Fi</p>
+                <p>Rating: 7.8/10</p>
+                <p>Plot: The Avengers are split into factions, each supporting different ideologies, and must face off against each other when a political conflict arises.</p>
+                <a href="https://www.youtube.com/watch?v=dKrVegVI0Us" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Doctor Strange -->
+            <div class="movie-card" data-genre="Action" data-year="2016">
+                <img src="./doctorstrange2016.jpeg" alt="Doctor Strange">
+                <h3>Doctor Strange</h3>
+                <p>Release Year: 2016</p>
+                <p>Genre: Action, Adventure, Fantasy</p>
+                <p>Rating: 7.5/10</p>
+                <p>Plot: Dr. Stephen Strange, a renowned neurosurgeon, discovers the hidden world of magic and alternate dimensions after a car accident.</p>
+                <a href="https://www.youtube.com/watch?v=Lt-U_t2pUHI" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Guardians of the Galaxy Vol. 2 -->
+            <div class="movie-card" data-genre="Action" data-year="2017">
+                <img src="./guardiansvol2.jpeg" alt="Guardians of the Galaxy Vol. 2">
+                <h3>Guardians of the Galaxy Vol. 2</h3>
+                <p>Release Year: 2017</p>
+                <p>Genre: Action, Adventure, Comedy</p>
+                <p>Rating: 7.9/10</p>
+                <p>Plot: The Guardians struggle to keep their newfound family together as they unravel the mystery of Peter Quill's parentage.</p>
+                <a href="https://www.youtube.com/watch?v=wUn05hdkhjM" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Spider-Man: Homecoming -->
+            <div class="movie-card" data-genre="Action" data-year="2017">
+                <img src="./homecoming2017.jpeg" alt="Spider-Man: Homecoming">
+                <h3>Spider-Man: Homecoming</h3>
+                <p>Release Year: 2017</p>
+                <p>Genre: Action, Adventure, Sci-Fi</p>
+                <p>Rating: 7.4/10</p>
+                <p>Plot: Peter Parker balances his life as a high school student with his role as Spider-Man while facing the Vulture, a new villain.</p>
+                <a href="https://www.youtube.com/watch?v=rk-dF1lIbIg" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Thor: Ragnarok -->
+            <div class="movie-card" data-genre="Action" data-year="2017">
+                <img src="./ragnorak.jpeg" alt="Thor: Ragnarok">
+                <h3>Thor: Ragnarok</h3>
+                <p>Release Year: 2017</p>
+                <p>Genre: Action, Adventure, Comedy</p>
+                <p>Rating: 7.9/10</p>
+                <p>Plot: Thor must escape the planet Sakaar and prevent the prophesied Ragnarok, the destruction of Asgard, caused by Hela.</p>
+                <a href="https://www.youtube.com/watch?v=ue80QwXMRHg" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Black Panther -->
+            <div class="movie-card" data-genre="Action" data-year="2018">
+                <img src="./blackpanther.jpeg" alt="Black Panther">
+                <h3>Black Panther</h3>
+                <p>Release Year: 2018</p>
+                <p>Genre: Action, Adventure, Drama</p>
+                <p>Rating: 7.3/10</p>
+                <p>Plot: T'Challa returns home to the technologically advanced African nation of Wakanda to claim his throne as king and protect it from enemies.</p>
+                <a href="https://www.youtube.com/watch?v=xjDjIWPwcPU" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Avengers: Infinity War -->
+            <div class="movie-card" data-genre="Action" data-year="2018">
+                <img src="./infinitywar2018.jpeg" alt="Avengers: Infinity War">
+                <h3>Avengers: Infinity War</h3>
+                <p>Release Year: 2018</p>
+                <p>Genre: Action, Adventure, Sci-Fi</p>
+                <p>Rating: 8.4/10</p>
+                <p>Plot: The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation puts an end to the universe.</p>
+                <a href="https://www.youtube.com/watch?v=6ZfuNTqbHE8" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Ant-Man and The Wasp -->
+            <div class="movie-card" data-genre="Action" data-year="2018">
+                <img src="./antandwasp.jpeg" alt="Ant-Man and The Wasp">
+                <h3>Ant-Man and The Wasp</h3>
+                <p>Release Year: 2018</p>
+                <p>Genre: Action, Adventure, Comedy</p>
+                <p>Rating: 7.0/10</p>
+                <p>Plot: Scott Lang teams up with Hope van Dyne as they seek to uncover secrets from their past while facing a new threat.</p>
+                <a href="https://www.youtube.com/watch?v=5Nn0c8rQ36I" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Captain Marvel -->
+            <div class="movie-card" data-genre="Action" data-year="2019">
+                <img src="./captainmarvel.jpeg" alt="Captain Marvel">
+                <h3>Captain Marvel</h3>
+                <p>Release Year: 2019</p>
+                <p>Genre: Action, Adventure, Sci-Fi</p>
+                <p>Rating: 6.8/10</p>
+                <p>Plot: Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.</p>
+                <a href="https://www.youtube.com/watch?v=Z1BCs9e9w0I" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Avengers: Endgame -->
+            <div class="movie-card" data-genre="Action" data-year="2019">
+                <img src="./avengers.jpeg" alt="Avengers: Endgame">
+                <h3>Avengers: Endgame</h3>
+                <p>Release Year: 2019</p>
+                <p>Genre: Action, Adventure, Drama</p>
+                <p>Rating: 8.4/10</p>
+                <p>Plot: The Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.</p>
+                <a href="https://www.youtube.com/watch?v=TcMBFSGVi1c" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Spider-Man: Far From Home -->
+            <div class="movie-card" data-genre="Action" data-year="2019">
+                <img src="./farfromhome.jpeg" alt="Spider-Man: Far From Home">
+                <h3>Spider-Man: Far From Home</h3>
+                <p>Release Year: 2019</p>
+                <p>Genre: Action, Adventure, Sci-Fi</p>
+                <p>Rating: 7.5/10</p>
+                <p>Plot: Peter Parker goes on a school trip to Europe and must step up to face a new threat, Mysterio, while dealing with the aftermath of Endgame.</p>
+                <a href="https://www.youtube.com/watch?v=Nt9L1j7k1wQ" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Black Widow -->
+            <div class="movie-card" data-genre="Action" data-year="2021">
+                <img src="./blackwidow.jpg" alt="Black Widow">
+                <h3>Black Widow</h3>
+                <p>Release Year: 2021</p>
+                <p>Genre: Action, Adventure, Thriller</p>
+                <p>Rating: 6.8/10</p>
+                <p>Plot: Natasha Romanoff confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises.</p>
+                <a href="https://www.youtube.com/watch?v=ybji16u608U" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Shang-Chi and the Legend of the Ten Rings -->
+            <div class="movie-card" data-genre="Action" data-year="2021">
+                <img src="./shangchi.jpeg" alt="Shang-Chi and the Legend of the Ten Rings">
+                <h3>Shang-Chi and the Legend of the Ten Rings</h3>
+                <p>Release Year: 2021</p>
+                <p>Genre: Action, Adventure, Fantasy</p>
+                <p>Rating: 7.5/10</p>
+                <p>Plot: Shang-Chi, a skilled martial artist, is drawn into the mysterious Ten Rings organization and must confront his past.</p>
+                <a href="https://www.youtube.com/watch?v=8YjFbMbfVaQ" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+        
+            <!-- Eternals -->
+            <div class="movie-card" data-genre="Action" data-year="2021">
+                <img src="./eternals.jpeg" alt="Eternals">
+                <h3>Eternals</h3>
+                <p>Release Year: 2021</p>
+                <p>Genre: Action, Adventure, Drama</p>
+                <p>Rating: 6.3/10</p>
+                <p>Plot: The Eternals, an ancient race of beings, must reunite to protect humanity from their evil counterparts, the Deviants, after centuries of being apart.</p>
+                <a href="https://www.youtube.com/watch?v=x_me3xsvDgk" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+
+            <!-- Spider-Man: No Way Home -->
+            <div class="movie-card" data-genre="Action" data-year="2021">
+                <img src="./nowayhome.jpeg" alt="Spider-Man: No Way Home">
+                <h3>Spider-Man: No Way Home</h3>
+                <p>Release Year: 2021</p>
+                <p>Genre: Action, Adventure, Sci-Fi</p>
+                <p>Rating: 8.0/10</p>
+                <p>Plot: Spider-Man's identity is revealed to the world, and he must seek help from Doctor Strange to fix the multiverse chaos.</p>
+                <a href="https://www.youtube.com/watch?v=JfVOs4V7p3g" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+            <!-- Existing movie cards here -->
+
+<div class="movie-card" data-genre="Action" data-year="2022">
+    <img src="./multiversemadness.jpeg" alt="Doctor Strange in the Multiverse of Madness">
+    <h3>Doctor Strange in the Multiverse of Madness</h3>
+    <p>Release Year: 2022</p>
+    <p>Genre: Action, Adventure, Fantasy</p>
+    <p>Rating: 6.9/10</p>
+    <a href="https://www.youtube.com/watch?v=link_here" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+    <p>Plot: Doctor Strange traverses multiple realities and teams up with allies to protect the multiverse from collapsing after his tampering creates a ripple across universes.</p>
+    <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+</div>
+
+<div class="movie-card" data-genre="Action" data-year="2022">
+    <img src="./loveandthunder2022.jpeg " alt="Thor: Love and Thunder">
+    <h3>Thor: Love and Thunder</h3>
+    <p>Release Year: 2022</p>
+    <p>Genre: Action, Adventure, Comedy</p>
+    <p>Rating: 6.8/10</p>
+    <a href="https://www.youtube.com/watch?v=link_here" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+    <p>Plot: Thor embarks on a quest for inner peace, only to face Gorr the God Butcher, who seeks to eliminate all gods. Thor teams up with Valkyrie, Korg, and Jane Foster, who now wields Mjolnir as the Mighty Thor.</p>
+    <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+</div>
+
+<div class="movie-card" data-genre="Action" data-year="2022">
+    <img src="./wakanda.jpeg" alt="Black Panther: Wakanda Forever">
+    <h3>Black Panther: Wakanda Forever</h3>
+    <p>Release Year: 2022</p>
+    <p>Genre: Action, Adventure, Drama</p>
+    <p>Rating: 6.8/10</p>
+    <a href="https://www.youtube.com/watch?v=link_here" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+    <p>Plot: After King T'Challa's passing, Wakanda must defend itself from global threats while facing the emergence of a new foe. Shuri and Queen Ramonda take center stage to protect the legacy of the Black Panther.</p>
+    <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+</div>
+
+<!-- MCU Phase Five Movies -->
+<div class="movie-card" data-genre="Action" data-year="2023">
+    <img src="./quantumanie.jpeg" alt="Ant-Man and The Wasp: Quantumania">
+    <h3>Ant-Man and The Wasp: Quantumania</h3>
+    <p>Release Year: 2023</p>
+    <p>Genre: Action, Adventure, Sci-Fi</p>
+    <p>Rating: 6.4/10</p>
+    <a href="https://www.youtube.com/watch?v=link_here" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+    <p>Plot: Scott Lang and Hope van Dyne are thrust into the Quantum Realm where they encounter strange creatures and Kang the Conqueror, forcing them to battle for the fate of the multiverse.</p>
+    <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+</div>
+
+<div class="movie-card" data-genre="Action" data-year="2023">
+    <img src="./guardiansvol3.jpeg" alt="Guardians of the Galaxy Vol. 3">
+    <h3>Guardians of the Galaxy Vol. 3</h3>
+    <p>Release Year: 2023</p>
+    <p>Genre: Action, Adventure, Comedy</p>
+    <p>Rating: 7.9/10</p>
+    <a href="https://www.youtube.com/watch?v=link_here" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+    <p>Plot: The Guardians embark on one last mission to protect the universe and confront Rocket's troubled past, facing new enemies and heartfelt challenges.</p>
+    <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+</div>
+
+<div class="movie-card" data-genre="Action" data-year="2023">
+    <img src="./theamrvels.jpeg" alt="The Marvels">
+    <h3>The Marvels</h3>
+    <p>Release Year: 2023</p>
+    <p>Genre: Action, Adventure, Sci-Fi</p>
+    <p>Rating: 6.8/10</p>
+    <a href="https://www.youtube.com/watch?v=link_here" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+    <p>Plot: When their powers become entangled, Carol Danvers, Kamala Khan, and Monica Rambeau must work together to unravel the mystery behind their connection and face a new cosmic threat.</p>
+    <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+</div>
+
+<div class="movie-card" data-genre="Action" data-year="2024">
+    <img src="./deadpoolandwolv.jpeg" alt="Deadpool & Wolverine">
+    <h3>Deadpool & Wolverine</h3>
+    <p>Release Year: 2024</p>
+    <p>Genre: Action, Adventure, Sci-Fi, Comedy</p>
+    <p>Rating: 8/10</p>
+    <a href="https://www.youtube.com/watch?v=link_here" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+    <p>Plot: When their powers become entangled, Carol Danvers, Kamala Khan, and Monica Rambeau must work together to unravel the mystery behind their connection and face a new cosmic threat.</p>
+    <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+</div>
+
+ <!-- More movie cards here -->
+      </div>
+    </section>
+ <section id="series">
+        <h2>Marvel Series</h2>
+        <div class="movie-container" id="seriesList">
+            <!-- Marvel Series -->
+            <div class="movie-card" data-genre="Action" data-year="2021">
+                <img src="./wanda.jpeg" alt="WandaVision">
+                <h3>WandaVision</h3>
+                <p>Release Year: 2021</p>
+                <p>Genre: Action, Drama, Fantasy</p>
+                <p>Rating: 7.9/10</p>
+                <a href="https://www.youtube.com/watch?v=1nFyk1B5VoA" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <p><strong>Plot:</strong> Wanda Maximoff and Vision, two super-powered beings living in a seemingly idyllic suburban life, begin to realize that their world is not what it seems as they experience changes in reality.</p>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+            <div class="movie-card" data-genre="Action" data-year="2021">
+                <img src="./falconwinter.jpeg" alt="The Falcon and the Winter Soldier">
+                <h3>The Falcon and the Winter Soldier</h3>
+                <p>Release Year: 2021</p>
+                <p>Genre: Action, Adventure, Drama</p>
+                <p>Rating: 7.6/10</p>
+                <a href="https://www.youtube.com/watch?v=4M5Bo8uR19Y" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <p><strong>Plot:</strong> Sam Wilson and Bucky Barnes team up in a global adventure that tests their abilities and their understanding of what it means to be a hero in a world without Captain America.</p>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+            <div class="movie-card" data-genre="Action" data-year="2021">
+                <img src="./loki.jpeg" alt="Loki">
+                <h3>Loki</h3>
+                <p>Release Year: 2021</p>
+                <p>Genre: Action, Adventure, Fantasy</p>
+                <p>Rating: 8.2/10</p>
+                <a href="https://www.youtube.com/watch?v=VtJBBsYq49U" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <p><strong>Plot:</strong> Loki, the God of Mischief, escapes from his alternate timeline and finds himself in the midst of a new cosmic conflict involving the Time Variance Authority and a new threat to the multiverse.</p>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+            <div class="movie-card" data-genre="Action" data-year="2022">
+                <img src="./moonknight.jpeg " alt="Moon Knight">
+                <h3>Moon Knight</h3>
+                <p>Release Year: 2022</p>
+                <p>Genre: Action, Adventure, Drama</p>
+                <p>Rating: 7.8/10</p>
+                <a href="https://www.youtube.com/watch?v=10_LRQWXYjQ" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <p><strong>Plot:</strong> Marc Spector, a former Marine with dissociative identity disorder, becomes the Moon Knight and is drawn into a battle with ancient Egyptian deities and his own fractured psyche.</p>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+            </div>
+            <div class="movie-card" data-genre="Action" data-year="2023">
+                <img src="./secretinvasion.jpeg " alt="Secret Invasion">
+                <h3>Secret Invasion</h3>
+                <p>Release Year: 2023</p>
+                <p>Genre: Action, Adventure, Drama</p>
+                <p>Rating: 6.5/10</p>
+                <a href="https://www.youtube.com/watch?v=6WqGikm3pZs" class="trailer-button" style="background-color: #e5e5e5;" target="_blank">Watch Trailer</a>
+                <p><strong>Plot:</strong> Nick Fury uncovers a secret invasion by Skrull shapeshifters who have infiltrated Earth and are threatening global security and the stability of the superhero community.</p>
+                <button class="watchlist-button" onclick="addToWatchlist('Movie Title')">Add to Watchlist</button>
+        </div>
+        </div>
+        
+    </section>
+</div> 
+</section>
+
+    <!-- Watchlist Section -->
+    <section id="watchlist" class="watchlist-section">
+        <h2>Your Watchlist</h2>
+        <div class="movie-container" id="watchlistContainer">
+            <!-- User's watchlist will be displayed here -->
+        </div>
+    </section>
+
+    <!-- Comment Section -->
+    <section>
+        <div class="comment-section">
+            <h3>Leave a Comment</h3>
+            <form id="commentForm">
+                <textarea id="commentText" rows="4" cols="50" placeholder="Write your comment here..."></textarea>
+                <br>
+                <input type="text" id="userName" placeholder="Your name" />
+                <br>
+                <button type="button" onclick="submitComment()">Submit</button>
+            </form>
+
+            <!-- Display Comments -->
+            <div id="commentList">
+                <h3>Comments:</h3>
+                <!-- User comments will be appended here -->
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Modal for Login and Signup -->
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- Login Form -->
+        <div id="loginForm" class="auth-form">
+            <h2>Login</h2>
+            <input type="text" id="loginUsername" placeholder="Username">
+            <input type="password" id="loginPassword" placeholder="Password">
+            <button type="button" onclick="login()">Login</button>
+            <p>Don't have an account? <a href="#" id="showSignup">Sign up here</a></p>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signupForm" class="auth-form" style="display:none;">
+            <h2>Sign Up</h2>
+            <input type="text" id="signupUsername" placeholder="Username">
+            <input type="password" id="signupPassword" placeholder="Password">
+            <button type="button" onclick="signup()">Sign Up</button>
+            <p>Already have an account? <a href="#" id="showLogin">Log in here</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="contact-info">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or suggestions, feel free to reach out to us!</p>
+        <p>Email: support@marvelmoviedatabase.com</p>
+        <p>Phone: (+91)7598985142</p>
+    </div>
+    <p>&copy; 2024 Marvel Universe Movie Database. All rights reserved.</p>
+</footer>
+
+<!-- Styles -->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .auth-buttons {
+        text-align: right;
+        margin-right: 20px;
+    }
+    .login-btn {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+        background-color: white;
+        margin: 15% auto;
+        padding: 20px;
+        width: 30%;
+    }
+    .auth-form {
+        text-align: center;
+    }
+    .auth-form input {
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        width: 80%;
+    }
+    .auth-form button {
+        background-color: #007BFF;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+    }
+    .close {
+        float: right;
+        font-size: 28px;
+        cursor: pointer;
+    }
+</style>
+
+<!-- JavaScript -->
+<script>
+    // Get the modal and buttons
+    var modal = document.getElementById("authModal");
+    var loginBtn = document.getElementById("loginBtn");
+    var closeBtn = document.getElementsByClassName("close")[0];
+    var showSignupLink = document.getElementById("showSignup");
+    var showLoginLink = document.getElementById("showLogin");
+    var loginForm = document.getElementById("loginForm");
+    var signupForm = document.getElementById("signupForm");
+
+    // Open the modal when login button is clicked
+    loginBtn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // Close the modal
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Switch to signup form
+    showSignupLink.onclick = function() {
+        loginForm.style.display = "none";
+        signupForm.style.display = "block";
+    }
+
+    // Switch to login form
+    showLoginLink.onclick = function() {
+        signupForm.style.display = "none";
+        loginForm.style.display = "block";
+    }
+
+    // Close the modal if user clicks outside of it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Placeholder for signup and login functionality
+    function signup() {
+        var username = document.getElementById("signupUsername").value;
+        var password = document.getElementById("signupPassword").value;
+        // Save user data to localStorage (or backend logic)
+        localStorage.setItem("username", username);
+        localStorage.setItem("password", password);
+        alert("Sign up successful!");
+        modal.style.display = "none";
+    }
+
+    function login() {
+        var username = document.getElementById("loginUsername").value;
+        var password = document.getElementById("loginPassword").value;
+        // Check user credentials from localStorage (or backend logic)
+        var savedUsername = localStorage.getItem("username");
+        var savedPassword = localStorage.getItem("password");
+        if (username === savedUsername && password === savedPassword) {
+            alert("Login successful!");
+            modal.style.display = "none";
+        } else {
+            alert("Invalid credentials!");
+        }
+    }
+</script>
+
+</body>
+</html>
